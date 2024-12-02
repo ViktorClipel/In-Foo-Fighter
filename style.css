@@ -1,0 +1,134 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.menu-item {
+    border: 0px transparent;
+    background-color: transparent;
+    color: rgb(255, 0, 234);
+    padding: 5px;
+    font-size: 3vw;
+    cursor: pointer;
+    user-select: none;
+    width: auto;
+    margin: 15px 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.2);
+    color: rgb(0, 247, 255);
+}
+
+.menu-item:active {
+    color: yellow;
+}
+
+.menu-screen {
+    display: none;
+    text-align: center;
+    color: white;
+}
+
+button {
+    background-color: rgb(255, 0, 234);
+    color: rgb(0, 247, 255);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(231, 68, 218);
+    transform: scale(1.2);
+}
+
+#character-selection {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Garante que ocupa toda a altura da tela */
+}
+
+#character-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 colunas */
+    gap: 20px; /* Espaço entre os itens */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.character-item {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s, border 0.3s;
+    font-size: 1em;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid transparent; /* Inicialmente sem borda */
+}
+
+.character-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.character-item.selected-player1 {
+    border: 3px solid blue; /* Indica o Player 1 */
+}
+
+.character-item.selected-player2 {
+    border: 3px solid red; /* Indica o Player 2 */
+}
+
+#current-player-indicator {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: white;
+    font-weight: bold;
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Garante alinhamento central */
+}
+
+

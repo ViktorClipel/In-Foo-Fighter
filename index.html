@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="source/InFooFighter(logo).png">
+    <title>In Foo Fighter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Menu -->
+    <div id="menu">
+        <nav>
+            <img src="source\InFooFighter(logo).png" alt="Logo bonita">
+            <div id="start" class="menu-item"><center>Start</center></div>
+            <div id="how" class="menu-item"><center>How to play</center></div>
+        </nav>
+    </div>
+
+    <!-- Tela de Instruções -->
+    <div id="how-to-play" class="menu-screen" style="display: none;">
+        <h1>How to Play</h1>
+        <h2>
+            <h1>Instruções sobre como jogar:</h1>
+            <h1>Player 1:</h1>
+            A, D: Movimentação vertical; <br>
+            W: Pular; <br>
+            S: Agachar; <br>
+            F: Soco; <br>
+            G: Chute; <br>
+            <h1> Player 2:</h1>
+            ⬅➡ : Movimentação vertical; <br>
+            ⬆: Pular; <br>
+            ⬇: Agachar; <br>
+            P: Soco; <br>
+            O: Chute; <br><br>
+        </h2>
+        <button id="back-to-menu">Voltar ao Menu</button>
+    </div>
+
+    <!-- Tela de Seleção de Personagem -->
+    <div id="character-selection" class="menu-screen" style="display: none;">
+        <h1>Selecione seu Personagem</h1>
+        <div id="current-player-indicator">Jogador Atual: Player 1</div>
+        <div id="character-grid"></div>
+        <button id="back-to-menu-selection">Voltar ao Menu</button>
+    </div>
+    
+     
+
+    <!-- Tela do Jogo (Canvas) -->
+    <div id="game-screen" class="menu-screen" style="display: none;">
+        <canvas id="canvas" width="1200" height="675"></canvas>
+        <button id="back-to-menu">Voltar ao Menu</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
