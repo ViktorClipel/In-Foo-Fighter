@@ -749,7 +749,7 @@ function tocarAni(objeto) {
 
 let personagens = [ 
     {
-        nome: "Adrian - Sem sprite",
+        nome: "Adrian - Completo",
         path: "/source/Sprite/Adrian.png",
         sts: {
             altura: 2,
@@ -759,7 +759,7 @@ let personagens = [
         },
     },
     {
-        nome: "Alan - Sem sprite",
+        nome: "Alan - Completo",
         path: "/source/Sprite/Alan.png",
         sts: {
             altura: 2,
@@ -769,8 +769,8 @@ let personagens = [
         },
     },
     {
-        nome: "Tonhão - Completo",
-        path: "/source/Sprite/Tonhao.png",
+        nome: "Tonhão - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 4,
@@ -779,7 +779,7 @@ let personagens = [
         },
     },
     {
-        nome: "Brayan - Metade",
+        nome: "Brayan - Completo",
         path: "/source/Sprite/Brayan.png",
         sts: {
             altura: 2,
@@ -789,8 +789,8 @@ let personagens = [
         },
     },
     {
-        nome: "Berenice",
-        path: "/source/Sprite/Berenice.png",
+        nome: "Berenice - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 1,
@@ -809,8 +809,8 @@ let personagens = [
         },
     },
     {
-        nome: "Caio - Sem Sprite",
-        path: "/source/Sprite/Caio.png",
+        nome: "Caio - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 1,
             dano: 2,
@@ -819,8 +819,8 @@ let personagens = [
         },
     },
     {
-        nome: "Carlos",
-        path: "/source/Sprite/Carlos.png",
+        nome: "Carlos - sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 0,
@@ -829,8 +829,8 @@ let personagens = [
         },
     },
     {
-        nome: "César",
-        path: "/source/Sprite/Cesar.png",
+        nome: "César - sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 4,
@@ -839,7 +839,7 @@ let personagens = [
         },
     },
     {
-        nome: "Diofight",
+        nome: "Diofight - Completo",
         path: "/source/Sprite/Diofight.png",
         sts: {
             altura: 2,
@@ -849,8 +849,8 @@ let personagens = [
         },
     },
     {
-        nome: "Gabriele",
-        path: "/source/Sprite/Gabriele.png",
+        nome: "Gabriele - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 2,
@@ -859,7 +859,7 @@ let personagens = [
         },
     },
     {
-        nome: "Gmano",
+        nome: "Gmano - Completo",
         path: "/source/Sprite/Gmano.png",
         sts: {
             altura: 1,
@@ -869,8 +869,8 @@ let personagens = [
         },
     },
     {
-        nome: "Dreik",
-        path: "/source/Sprite/Dreik.png",
+        nome: "Dreik - Completo",
+        path: "/source/Sprite/Guilherme.png",
         sts: {
             altura: 2,
             dano: 1,
@@ -879,8 +879,8 @@ let personagens = [
         },
     },
     {
-        nome: "Joana",
-        path: "/source/Sprite/Joana.png",
+        nome: "Joana - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 2,
@@ -889,7 +889,7 @@ let personagens = [
         },
     },
     {
-        nome: "João",
+        nome: "João - Completo",
         path: "/source/Sprite/Joao.png",
         sts: {
             altura: 2,
@@ -899,8 +899,8 @@ let personagens = [
         },
     },
     {
-        nome: "Kalindi",
-        path: "/source/Sprite/Kalindi.png",
+        nome: "Kalindi - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 3,
             dano: 4,
@@ -909,8 +909,8 @@ let personagens = [
         },
     },
     {
-        nome: "Lucas Fritsch",
-        path: "/source/Sprite/LucasFritsch.png",
+        nome: "Lucas Fritsch - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 1,
             dano: 5,
@@ -919,8 +919,8 @@ let personagens = [
         },
     },
     {
-        nome: "Lucas Paese",
-        path: "/source/Sprite/LucasPaese.png",
+        nome: "Lucas Paese - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 3,
@@ -929,8 +929,8 @@ let personagens = [
         },
     },
     {
-        nome: "Luiza",
-        path: "/source/Sprite/Luiza.png",
+        nome: "Luiza - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 3,
             dano: 3,
@@ -939,7 +939,7 @@ let personagens = [
         },
     },
     {
-        nome: "Marco",
+        nome: "Marco - Completo",
         path: "/source/Sprite/Marco.png",
         sts: {
             altura: 1,
@@ -949,8 +949,8 @@ let personagens = [
         },
     },
     {
-        nome: "Mariana",
-        path: "/source/Sprite/Mariana.png",
+        nome: "Mariana - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 2,
@@ -959,8 +959,8 @@ let personagens = [
         },
     },
     {
-        nome: "Jablonski",
-        path: "/source/Sprite/Jablonski.png",
+        nome: "Jablonski - Perdi",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 2,
@@ -969,8 +969,8 @@ let personagens = [
         },
     },
     {
-        nome: "Naiara",
-        path: "/source/Sprite/Naiara.png",
+        nome: "Naiara - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 1,
@@ -979,8 +979,8 @@ let personagens = [
         },
     },
     {
-        nome: "Rafaela",
-        path: "/source/Sprite/Rafaela.png",
+        nome: "Rafaela - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 3,
@@ -989,7 +989,7 @@ let personagens = [
         },
     },
     {
-        nome: "Ramiro",
+        nome: "Ramiro - 'Completo'",
         path: "/source/Sprite/Ramiro.png",
         sts: {
             altura: 2,
@@ -999,8 +999,8 @@ let personagens = [
         },
     },
     {
-        nome: "Ronaldo",
-        path: "/source/Sprite/Ronaldo.png",
+        nome: "Ronaldo - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 3,
             dano: 2,
@@ -1009,8 +1009,8 @@ let personagens = [
         },
     },
     {
-        nome: "Sady",
-        path: "/source/Sprite/Sady.png",
+        nome: "Sady - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 1,
             dano: 7,
@@ -1019,8 +1019,8 @@ let personagens = [
         },
     },
     {
-        nome: "Suelen",
-        path: "/source/Sprite/Suelen.png",
+        nome: "Suelen - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 2,
@@ -1029,8 +1029,8 @@ let personagens = [
         },
     },
     {
-        nome: "Viktor",
-        path: "/source/Sprite/Viktor.png",
+        nome: "Viktor - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 1,
             dano: 2,
@@ -1039,8 +1039,8 @@ let personagens = [
         },
     },
     {
-        nome: "Vicky",
-        path: "/source/Sprite/Vicky.png",
+        nome: "Vicky - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 2,
@@ -1049,7 +1049,7 @@ let personagens = [
         },
     },
     {
-        nome: "Kbeçinha",
+        nome: "Kbeçinha - Completo",
         path: "/source/Sprite/Kbecinha.png",
         sts: {
             altura: 3,
@@ -1059,8 +1059,8 @@ let personagens = [
         },
     },
     {
-        nome: "Vitor",
-        path: "/source/Sprite/Vitor.png",
+        nome: "Vitor - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 9,
@@ -1069,8 +1069,8 @@ let personagens = [
         },
     },
     {
-        nome: "Yuri lanches",
-        path: "/source/Sprite/YuriLanches.png",
+        nome: "Yuri lanches - Sem sprite",
+        path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
             dano: 3,
@@ -1079,7 +1079,7 @@ let personagens = [
         },
     },
     {
-        nome: "Coelho",
+        nome: "Coelho - Completo",
         path: "/source/Sprite/Coelho.png",
         sts: {
             altura: 2,
@@ -1089,7 +1089,7 @@ let personagens = [
         },
     },
     {
-        nome: "Arthur",
+        nome: "Arthur - Boneco base",
         path: "/source/Sprite/Arthur.png",
         sts: {
             altura: 2,
