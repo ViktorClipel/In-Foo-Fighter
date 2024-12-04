@@ -2,7 +2,7 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext("2d");
 
 let gameOver = false;
-let isGameRunning = false; // Controle de execução do loop
+let isGameRunning = false;
 let imagesLoaded = 0;
 const totalImages = 3;
 const yInicio = 300;
@@ -58,11 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', goToMenu);
     });
 
-    // Função para popular a grade de personagens
+    // Função para encher a grade de personagens
     function populateCharacterGrid() {
-        const characters = personagens; // Lista de personagens com imagens e status
+        const characters = personagens;
 
-        // Preenche a grade apenas com os nomes dos personagens
+        // Preenche a lista
         characterGrid.innerHTML = characters.map((char, index) => `
             <div class="character-item" data-index="${index}">
                 <!-- <img src="${char.imagem}" alt="${char.nome}"> -->
@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `).join('');
 
-        let currentPlayer = 1; // Começa com o Player 1
+        let currentPlayer = 1;
         const selectedCharacters = { player1: null, player2: null };
-        let isSelectionLocked = false; // Bloquear seleção
+        let isSelectionLocked = false;
 
         const updateIndicator = () => {
             const indicator = document.getElementById('current-player-indicator');
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function lockSelection() {
             isSelectionLocked = true;
             document.querySelectorAll('.character-item').forEach(item => {
-                item.style.pointerEvents = 'none'; // Desabilita clique
+                item.style.pointerEvents = 'none';
             });
         }
 
@@ -97,13 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
         function unlockSelection() {
             isSelectionLocked = false;
             document.querySelectorAll('.character-item').forEach(item => {
-                item.style.pointerEvents = 'auto'; // Habilita clique
+                item.style.pointerEvents = 'auto';
             });
         }
 
         document.querySelectorAll('.character-item').forEach(item => {
             item.addEventListener('click', (event) => {
-                if (isSelectionLocked) return; // Impede seleção durante a espera
+                if (isSelectionLocked) return;
 
                 const selectedIndex = event.target.closest('.character-item').getAttribute('data-index');
 
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     selectedCharacters.player1 = selectedIndex;
                     event.target.closest('.character-item').classList.add('selected-player1');
-                    currentPlayer = 2; // Passa para o próximo jogador
+                    currentPlayer = 2;
                 } else if (currentPlayer === 2) {
                     // Remove seleção anterior do Player 2
                     if (selectedCharacters.player2 !== null) {
@@ -126,15 +126,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     selectedCharacters.player2 = selectedIndex;
                     event.target.closest('.character-item').classList.add('selected-player2');
-                    currentPlayer = 3; // Reseta para Player 1
+                    currentPlayer = 3;
                 }
 
                 updateIndicator();
 
                 // Atribui os status após ambos escolherem
                 if (selectedCharacters.player1 !== null && selectedCharacters.player2 !== null) {
-                    console.log(`Player 1 escolheu o personagem ${characters[selectedCharacters.player1].nome}`);
-                    console.log(`Player 2 escolheu o personagem ${characters[selectedCharacters.player2].nome}`);
+
+                    player1.sts.dano = 3;
+                    player2.sts.dano = 3;
+                    player1.sts.velocidade = 7;
+                    player2.sts.velocidade = 7;
 
                     // Atribuir os status aos players
                     player1.nome = characters[selectedCharacters.player1].nome;
@@ -152,19 +155,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     player2.img.src = characters[selectedCharacters.player2].path;
 
                     // Resetar posições antes de iniciar o jogo
-                    player1.set.x = 900; // Posição inicial
-                    player2.set.x = 200; // Posição inicial
+                    player1.set.x = 900;
+                    player2.set.x = 200;
                     player1.set.y = yInicio;
                     player2.set.y = yInicio;
 
-                    // Bloqueia seleção
                     lockSelection();
 
                     // Aguarda 3 segundos antes de trocar de tela
                     setTimeout(() => {
                         characterSelectionScreen.style.display = 'none';
                         gameScreen.style.display = 'block';
-                        unlockSelection(); // Libera seleção após 3 segundos
+                        unlockSelection();
                     }, 3000);
                 }
             });
@@ -191,7 +193,7 @@ let player1 = {
         x: 900,
         y: yInicio, 
         largura: 50*3,
-        altura: 108*3,
+        altura: 90*3,
         poderPulo: -20,
         gravity: 0.5,
         velocityY: 0,
@@ -247,7 +249,7 @@ let player2 = {
         x: 200,
         y: yInicio, 
         largura: 50*3,
-        altura: 108*3,
+        altura: 100*3,
         poderPulo: -20,
         gravity: 0.5,
         velocityY: 0,
@@ -290,21 +292,15 @@ let player2 = {
 player1.img.src = 'source/placeholders.png';
 player2.img.src = 'source/placeholders.png';
 
-// O restante do código permanece sem mudanças
-
 // Carregar a imagem de fundo
 let backgroundImg = new Image();
-backgroundImg.src = 'source/background.png';  // Caminho para sua imagem de fundo
-
-
-
-
+backgroundImg.src = 'source/background.png';
 
 
 // Loop do jogo
 
 function gameLoop() {
-    if (gameOver) return; // Impede a execução do loop se o jogo estiver em game over
+    if (gameOver) return;
 
     direção(player1, player2);  
     direção(player2, player1);
@@ -343,7 +339,7 @@ function gameLoop() {
         colisãoPlayers(player2, player1);
     }
 
-    // Checar se algum jogador morreu
+    // Checar se morreu
     if (player1.sts.vida <= 0 || player2.sts.vida <= 0) {
         gameOver = true;
         mostrarGameOver();
@@ -372,17 +368,19 @@ function draw(objeto) {
         spriteHeight - 1,
         objeto.set.direcao === -1 ? -objeto.set.x - objeto.set.largura : objeto.set.x,
         objeto.set.y,
-        spriteWidth*3,
-        spriteHeight*3);
+        spriteWidth,
+        spriteHeight
+    );
     ctx.restore();
 }
 
 function drawHealthBar(objeto, nome, xis) {
+
     // Definir dimensões da barra
-    const barWidth = 480; // Largura total da barra
-    const barHeight = 30; // Altura da barra
-    const x = xis; // Posição X inicial
-    const y = 10; // Posição Y inicial
+    const barWidth = 480;
+    const barHeight = 30;
+    const x = xis;
+    const y = 10;
 
     // Calcular larguras proporcionais
     if(objeto.sts.vida < 0){
@@ -392,24 +390,24 @@ function drawHealthBar(objeto, nome, xis) {
     const displayedBarWidth = (objeto.sts.displayedVida / objeto.sts.vidaMax) * barWidth;
 
     // Desenhar fundo vermelho
-    ctx.fillStyle = '#ff0000'; // Cor de fundo da barra
+    ctx.fillStyle = '#ff0000';
     ctx.fillRect(x, y, barWidth, barHeight);
 
     // Desenhar borda da barra
-    ctx.strokeStyle = '#000'; // Cor da borda
+    ctx.strokeStyle = '#000';
     ctx.lineWidth = 2;
     ctx.strokeRect(x, y, barWidth, barHeight);
 
-    // Desenhar barra amarela (vida perdida)
-    ctx.fillStyle = '#ffc107'; // Cor da barra amarela
+    // Desenhar vida perdida
+    ctx.fillStyle = '#ffc107';
     ctx.fillRect(x, y, displayedBarWidth, barHeight);
 
-    // Desenhar barra verde (vida atual)
-    ctx.fillStyle = '#4caf50'; // Cor da barra verde
+    // Desenhar vida atual
+    ctx.fillStyle = '#4caf50'
     ctx.fillRect(x, y, currentBarWidth, barHeight);
 
     // Desenhar nome do jogador na barra
-    ctx.fillStyle = '#fff'; // Cor do texto: branco
+    ctx.fillStyle = '#fff';
     ctx.font = '16px Arial';
     ctx.textAlign = 'center';
     ctx.fillText(nome, x + barWidth / 2, y + barHeight - 7);
@@ -419,9 +417,9 @@ function drawHealthBar(objeto, nome, xis) {
 // Função para animar a barra amarela suavemente
 function updateHealth(objeto) {
     if (objeto.sts.displayedVida > objeto.sts.vida) {
-        objeto.sts.displayedVida -= 0.34; // Velocidade de redução
+        objeto.sts.displayedVida -= 0.34;
         if (objeto.sts.displayedVida < objeto.sts.vida) {
-            objeto.sts.displayedVida = objeto.sts.vida; // Alinha as barras ao final
+            objeto.sts.displayedVida = objeto.sts.vida;
         }
     }
 }
@@ -602,7 +600,6 @@ document.addEventListener('keydown', (event) => {
         player1.keys.cima = true;
     } else if (event.key === 'ArrowDown') {
         player1.keys.baix = true;
-        player1.set.altura = (player1.set.altura / 3)*2   
     } else if (event.key === 'p') {
         player1.keys.soco = true;
     } else if (event.key === 'o') {
@@ -617,7 +614,6 @@ document.addEventListener('keydown', (event) => {
         player2.keys.cima = true;
     } else if (event.key === 's') {
         player2.keys.baix = true;
-        player2.set.altura = (player2.set.altura / 3)*2   
     } else if (event.key === 'f') {
         player2.keys.soco = true;
     } else if (event.key === 'g') {
@@ -643,7 +639,6 @@ document.addEventListener('keyup', (event) => {
     } else if (event.key === 'ArrowDown') {
         player1.keys.baix = false;
         player1.is.crawling = false;
-        player1.set.altura = (player1.set.altura / 2) * 3
     }
     
     // teclas player 2
@@ -658,7 +653,6 @@ document.addEventListener('keyup', (event) => {
     } else if (event.key === 's') {
         player2.keys.baix = false;
         player2.is.crawling = false;  
-        player2.set.altura = (player2.set.altura / 2) * 3 
     }
 });
 
@@ -711,7 +705,6 @@ function selecionarAni(objeto) {
     // Seleciona a animação correspondente
     for (let i = 0; i < animacoes.length; i++) {
         if (animacoes[i].condicao) {
-            // Apenas muda de animação se ela for diferente da atual
             if (objeto.anim.atual !== animacoes[i].anim.atual) {
                 objeto.anim.atual = animacoes[i].anim.atual;
                 objeto.anim.quant = animacoes[i].anim.quant;
@@ -729,21 +722,19 @@ function tocarAni(objeto) {
     // Verifica se há uma animação configurada
     if (!objeto.anim || !objeto.anim.quant) return;
 
-    // Caso a animação seja repetitiva
+    // Repetir
     if (objeto.anim.repeat) {
-        // Inicia o intervalo da animação, se ainda não estiver ativo
         if (!objeto.anim.animationInterval) {
             objeto.anim.animationInterval = setInterval(() => {
                 objeto.anim.linha = (objeto.anim.linha + 1) % objeto.anim.quant;
-            }, 50 + (10-objeto.sts.velocidade)*10); // Ajuste o tempo em milissegundos para sua animação
+            }, 50 + (10-objeto.sts.velocidade)*10);
         }
     } else {
-        // Para animações que não se repetem
+    // Não Repetir
         if (objeto.anim.animationInterval) {
             clearInterval(objeto.anim.animationInterval);
             objeto.anim.animationInterval = null;
         }
-        // Define a última linha como o estado final da animação
         objeto.anim.linha = objeto.anim.quant - 1;
     }
 }
